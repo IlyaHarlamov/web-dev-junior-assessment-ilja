@@ -1,0 +1,20 @@
+body {
+    background-image: url('../assets/images/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+@media (max-width: 375px) {
+    body {
+      background-image: url('../assets/images/background-mobile.png');
+    }
+  }
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 36px 0;
+}
