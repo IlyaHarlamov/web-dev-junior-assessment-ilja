@@ -1,20 +1,103 @@
-body {
-    background-image: url('../assets/images/background-desktop.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+:root {
+  /* Font */
+  --font-family-inconsolata: 'Inconsolata';
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --default-font-size: 20px;
 
+  /* Color */
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+}
+
+
+/* Fonts */
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+
+
+/* Color Classes */
+.neutral-0 {
+  color: var(--neutral-0)
+}
+
+.neutral-300 {
+  color: var(--neutral-300)
+}
+
+.neutral-500 {
+  color: var(--neutral-500)
+}
+
+.neutral-700 {
+  color: var(--neutral-700)
+}
+
+.neutral-900 {
+  color: var(--neutral-900)
+}
+
+.orange-500 {
+  color: var(--orange-500)
+}
+
+.orange-700 {
+  color: var(--orange-700)
+}
+
+
+/* Elements */
+body {
+  background-image: url('../assets/images/background-desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: var(--font-family-inconsolata);
+  font-size: var(--default-font-size);
+  color: var(--neutral-0);
 }
 
 @media (max-width: 375px) {
-    body {
-      background-image: url('../assets/images/background-mobile.png');
-    }
+  body {
+    background-image: url('../assets/images/background-mobile.png');
   }
+}
 
 header {
-    display: flex;
-    justify-content: center;
-    padding: 36px 0;
+  display: flex;
+  justify-content: center;
+  padding: 36px 0;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: var(--font-weight-extrabold);
+}
+
+p {
+  font-size: 16px;
+}
+
+
+/* Custom Components */
+#welcome-section {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#welcome-section p {
+  font-size: 26px;
+  color: var(--neutral-300);
 }
