@@ -62,7 +62,6 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-family: var(--font-family-inconsolata);
   font-size: var(--default-font-size);
   color: var(--neutral-0);
 }
@@ -79,6 +78,12 @@ header {
   padding: 36px 0;
 }
 
+body,
+button,
+input {
+  font-family: var(--font-family-inconsolata);
+}
+
 h1 {
   font-size: 48px;
   font-weight: var(--font-weight-extrabold);
@@ -88,8 +93,104 @@ p {
   font-size: 16px;
 }
 
+input::placeholder {
+  color: var(--neutral-300);
+}
 
-/* Custom Components */
+label {
+  font-weight: var(--font-weight-regular);
+}
+
+
+/* Buttons */
+.btn-submit {
+  background-color: var(--orange-700);
+  color: var(--neutral-900);
+  font-weight: var(--font-weight-extrabold);
+  font-size: 18px;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+
+/* Forms - Ticket Form */
+.form-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 20px 20px 20px;
+  max-width: 460px;
+}
+
+.ticket-form-group {
+  margin-bottom: 32px;
+}
+
+.ticket-form-group label,
+#ticket-form-file-upload-label {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.ticket-form-group input,
+.ticket-form-group button {
+  width: 100%;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.ticket-form-group input,
+.ticket-form-group button,
+.ticket-form-file-upload {
+  border-radius: 12px;
+}
+
+.ticket-form-group input,
+.ticket-form-file-upload {
+  background-color: hsla(0, 0%, 100%, 0.08);
+  caret-color: var(--neutral-0);
+}
+
+.ticket-form-group input:hover,
+.ticket-form-group button:hover,
+.ticket-form-file-upload:hover {
+  opacity: 0.9;
+}
+
+.ticket-form-group input[type="text"],
+.ticket-form-group input[type="email"] {
+  border: 0.5px solid var(--neutral-500);
+}
+
+.ticket-form-group input[type="file"] {
+  display: none
+}
+
+.ticket-form-group .ticket-form-file-upload {
+  border: none;
+  padding: 28px;
+  color: #8784a4;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23d2d1d6' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ticket-form-group .ticket-form-file-upload img {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border-radius: 12px;
+  background-color: var(--neutral-700)
+}
+
+.ticket-form-group .ticket-form-file-upload:hover {
+  cursor: copy;
+}
+
+/* Welcome Section */
 #welcome-section {
   margin-left: auto;
   margin-right: auto;

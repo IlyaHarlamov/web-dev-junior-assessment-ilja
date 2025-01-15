@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Generator</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="assets/icons/favicon-32x32.png" type="image/png">
-  </head>
-  <body>
-    <header>
-        <div id="logo-container">
-            <img id="logo" src="assets/images/logo-full.svg" alt="Logo">
-        </div>
-    </header>
-
-    <main>
-      <section id="welcome-section">
-        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-        <p>Secure your spot at next year's biggest coding conference.</p>
-      </section>
-    </main>
-
-  </body>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Generator</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="assets/icons/favicon-32x32.png" type="image/png">
+</head>
+<body>
+  <header>
+    <div id="logo-container">
+      <img id="logo" src="assets/images/logo-full.svg" alt="Logo">
+    </div>
+  </header>
+  <main>
+    <section id="welcome-section">
+      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p>Secure your spot at next year's biggest coding conference.</p>
+    </section>
+    <section id="ticket-form">
+      <div class="form-container">
+        <form>
+          <div class="ticket-form-group">
+            <label for="avatar">
+              <span id="ticket-form-file-upload-label">Upload Avatar</span>
+              <div class="ticket-form-file-upload">
+                <img src="assets/icons/icon-upload.svg" alt="Upload Icon">
+                Drag and drop or click to upload
+              </div>
+            </label>
+            <input type="file" id="avatar" name="avatar">
+          </div>
+          <div class="ticket-form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name">
+          </div>
+          <div class="ticket-form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com">
+          </div>
+          <div class="ticket-form-group">
+            <label for="github">GitHub Username</label>
+            <input type="text" id="github" name="github" placeholder="@yourusername">
+          </div>
+          <div class="ticket-form-group">
+            <button class="btn-submit" type="submit">Generate My Ticket</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
