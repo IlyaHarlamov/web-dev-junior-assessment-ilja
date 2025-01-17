@@ -1,6 +1,6 @@
 :root {
   /* Font */
-  --font-family-inconsolata: 'Inconsolata';
+  --font-family-inconsolata: "Inconsolata";
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
@@ -17,47 +17,45 @@
   --orange-700: hsl(7, 71%, 60%);
 }
 
-
 /* Fonts */
 @font-face {
-  font-family: 'Inconsolata';
-  src: url('../assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-family: "Inconsolata";
+  src: url("../assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
+    format("truetype");
 }
-
 
 /* Color Classes */
 .neutral-0 {
-  color: var(--neutral-0)
+  color: var(--neutral-0);
 }
 
 .neutral-300 {
-  color: var(--neutral-300)
+  color: var(--neutral-300);
 }
 
 .neutral-500 {
-  color: var(--neutral-500)
+  color: var(--neutral-500);
 }
 
 .neutral-700 {
-  color: var(--neutral-700)
+  color: var(--neutral-700);
 }
 
 .neutral-900 {
-  color: var(--neutral-900)
+  color: var(--neutral-900);
 }
 
 .orange-500 {
-  color: var(--orange-500)
+  color: var(--orange-500);
 }
 
 .orange-700 {
-  color: var(--orange-700)
+  color: var(--orange-700);
 }
-
 
 /* Elements */
 body {
-  background-image: url('../assets/images/background-desktop.png');
+  background-image: url("../assets/images/background-desktop.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -68,14 +66,14 @@ body {
 
 @media (max-width: 375px) {
   body {
-    background-image: url('../assets/images/background-mobile.png');
+    background-image: url("../assets/images/background-mobile.png");
   }
 }
 
 header {
   display: flex;
   justify-content: center;
-  padding: 36px 0;
+  margin: 38px 0px;
 }
 
 body,
@@ -85,12 +83,13 @@ input {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 54px;
   font-weight: var(--font-weight-extrabold);
 }
 
 p {
   font-size: 16px;
+  font-weight: var(--font-weight-regular);
 }
 
 input::placeholder {
@@ -100,7 +99,6 @@ input::placeholder {
 label {
   font-weight: var(--font-weight-regular);
 }
-
 
 /* Buttons */
 .btn-submit {
@@ -114,12 +112,11 @@ label {
   cursor: pointer;
 }
 
-
 /* Forms - Ticket Form */
-.form-container {
+#ticket-form-container {
   margin-left: auto;
   margin-right: auto;
-  padding: 30px 20px 20px 20px;
+  padding: 0px 20px 20px 20px;
   max-width: 460px;
 }
 
@@ -131,6 +128,7 @@ label {
 #ticket-form-file-upload-label {
   display: block;
   margin-bottom: 16px;
+  color: var(--neutral-300)
 }
 
 .ticket-form-group input,
@@ -146,30 +144,30 @@ label {
   border-radius: 12px;
 }
 
-.ticket-form-group input,
-.ticket-form-file-upload {
+.ticket-form-file-upload,
+.ticket-form-group input {
   background-color: hsla(0, 0%, 100%, 0.08);
-  caret-color: var(--neutral-0);
 }
 
 .ticket-form-group input:hover,
 .ticket-form-group button:hover,
-.ticket-form-file-upload:hover {
+.avatar-upload-group:hover .ticket-form-file-upload {
   opacity: 0.9;
 }
 
 .ticket-form-group input[type="text"],
 .ticket-form-group input[type="email"] {
   border: 0.5px solid var(--neutral-500);
+  color: var(--neutral-0);
 }
 
 .ticket-form-group input[type="file"] {
-  display: none
+  display: none;
 }
 
 .ticket-form-group .ticket-form-file-upload {
   border: none;
-  padding: 28px;
+  padding: 20px;
   color: #8784a4;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23d2d1d6' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
   display: flex;
@@ -179,11 +177,12 @@ label {
 }
 
 .ticket-form-group .ticket-form-file-upload img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   padding: 8px;
   border-radius: 12px;
-  background-color: var(--neutral-700)
+  border: 1px solid hsl(0, 0%, 70%, 0.25);
+  background-color: hsla(0, 0%, 70%, 0.2);
 }
 
 .ticket-form-group .ticket-form-file-upload:hover {
@@ -192,13 +191,32 @@ label {
 
 /* Welcome Section */
 #welcome-section {
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   word-wrap: break-word;
+  padding-bottom: 36px;
+}
+
+#welcome-section h1 {
+  max-width: 840px;
+  margin: 0px;
 }
 
 #welcome-section p {
-  font-size: 26px;
   color: var(--neutral-300);
+  font-size: 22px;
+  line-height: 1.4em;
+}
+
+#welcome-message-fullname {
+  background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#secondary-welcome-message-email {
+  color: var(--orange-700);
 }

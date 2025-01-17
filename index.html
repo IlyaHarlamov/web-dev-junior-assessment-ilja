@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ticket Generator</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/ticket-component.css">
   <link rel="shortcut icon" href="assets/icons/favicon-32x32.png" type="image/png">
 </head>
 <body>
@@ -17,10 +18,11 @@
       <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
       <p>Secure your spot at next year's biggest coding conference.</p>
     </section>
-    <section id="ticket-form">
-      <div class="form-container">
-        <form>
-          <div class="ticket-form-group">
+    <section>
+      <div id="ticket-placeholder"></div>
+      <div id="ticket-form-container">
+        <form id="ticket-form">
+          <div class="ticket-form-group avatar-upload-group">
             <label for="avatar">
               <span id="ticket-form-file-upload-label">Upload Avatar</span>
               <div class="ticket-form-file-upload">
@@ -49,5 +51,7 @@
       </div>
     </section>
   </main>
+  <!-- Scripts -->
+  <script src="js/formHandler.js" type="text/javascript" defer></script>
 </body>
 </html>
