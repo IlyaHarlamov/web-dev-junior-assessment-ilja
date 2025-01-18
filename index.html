@@ -1,57 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ticket Generator</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/ticket-component.css">
-  <link rel="shortcut icon" href="assets/icons/favicon-32x32.png" type="image/png">
-</head>
-<body>
-  <header>
-    <div id="logo-container">
-      <img id="logo" src="assets/images/logo-full.svg" alt="Logo">
-    </div>
-  </header>
-  <main>
-    <section id="welcome-section">
-      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-      <p>Secure your spot at next year's biggest coding conference.</p>
-    </section>
-    <section>
-      <div id="ticket-placeholder"></div>
-      <div id="ticket-form-container">
-        <form id="ticket-form">
-          <div class="ticket-form-group avatar-upload-group">
-            <label for="avatar">
-              <span id="ticket-form-file-upload-label">Upload Avatar</span>
-              <div class="ticket-form-file-upload">
-                <img src="assets/icons/icon-upload.svg" alt="Upload Icon">
-                Drag and drop or click to upload
-              </div>
-            </label>
-            <input type="file" id="avatar" name="avatar">
-          </div>
-          <div class="ticket-form-group">
-            <label for="full-name">Full Name</label>
-            <input type="text" id="full-name" name="full-name">
-          </div>
-          <div class="ticket-form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="example@email.com">
-          </div>
-          <div class="ticket-form-group">
-            <label for="github">GitHub Username</label>
-            <input type="text" id="github" name="github" placeholder="@yourusername">
-          </div>
-          <div class="ticket-form-group">
-            <button class="btn-submit" type="submit">Generate My Ticket</button>
-          </div>
-        </form>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Generator</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/ticket-component.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon-32x32.png"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="logo-container">
+        <img id="logo" src="assets/images/logo-full.svg" alt="Logo" />
       </div>
-    </section>
-  </main>
-  <!-- Scripts -->
-  <script src="js/formHandler.js" type="text/javascript" defer></script>
-</body>
+    </header>
+    <main>
+      <section id="welcome-section">
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </section>
+      <section>
+        <div id="ticket-placeholder"></div>
+        <div id="ticket-form-container">
+          <form id="ticket-form">
+            <div class="ticket-form-group avatar-upload-group">
+              <div id="upload-avatar-label-container">
+                <input
+                  type="file"
+                  id="avatar"
+                  name="avatar"
+                  accept="image/*"
+                  onchange="handleFileUpload(event)"
+                />
+                <label for="avatar" id="upload-label" >
+                  <span>Upload Avatar</span>
+                  <div id="ticket-form-file-upload">
+                      <img src="assets/icons/icon-upload.svg" alt="Upload Icon" />
+                      <p id="file-upload-tip">Drag and drop or click to upload</p>
+                  </div>
+                </label>
+                <div id="preview-container" style="display: none">
+                  <img id="preview-image" alt="Uploaded Image" />
+                  <div class="preview-actions">
+                    <button
+                      type="button"
+                      id="remove-image-btn"
+                      onclick="removeImage()">
+                      Remove image
+                    </button>
+                    <button
+                      type="button"
+                      id="change-image-btn"
+                      onclick="reuploadImage()"
+                    >
+                      Change image
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ticket-form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" name="full-name" />
+            </div>
+            <div class="ticket-form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@email.com"
+              />
+            </div>
+            <div class="ticket-form-group">
+              <label for="github-username">GitHub Username</label>
+              <input
+                type="text"
+                id="github-username"
+                name="github-username"
+                placeholder="@yourusername"
+              />
+            </div>
+            <div class="ticket-form-group">
+              <button class="btn-submit" id="form-submit-button" type="submit">
+                Generate My Ticket
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- Scripts -->
+    <script src="js/formHandler.js" type="text/javascript" defer></script>
+  </body>
 </html>

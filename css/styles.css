@@ -83,7 +83,7 @@ input {
 }
 
 h1 {
-  font-size: 54px;
+  font-size: 36px;
   font-weight: var(--font-weight-extrabold);
 }
 
@@ -117,41 +117,37 @@ label {
   margin-left: auto;
   margin-right: auto;
   padding: 0px 20px 20px 20px;
-  max-width: 460px;
+  max-width: 420px;
 }
 
 .ticket-form-group {
   margin-bottom: 32px;
 }
 
-.ticket-form-group label,
-#ticket-form-file-upload-label {
+#upload-label,
+#upload-label span,
+#ticket-form label {
   display: block;
   margin-bottom: 16px;
   color: var(--neutral-300)
 }
 
 .ticket-form-group input,
-.ticket-form-group button {
+#form-submit-button {
   width: 100%;
   padding: 18px;
   box-sizing: border-box;
 }
 
 .ticket-form-group input,
-.ticket-form-group button,
-.ticket-form-file-upload {
+#form-submit-button,
+#ticket-form-file-upload {
   border-radius: 12px;
 }
 
-.ticket-form-file-upload,
-.ticket-form-group input {
-  background-color: hsla(0, 0%, 100%, 0.08);
-}
-
 .ticket-form-group input:hover,
-.ticket-form-group button:hover,
-.avatar-upload-group:hover .ticket-form-file-upload {
+#form-submit-button:hover,
+.avatar-upload-group:hover #ticket-form-file-upload {
   opacity: 0.9;
 }
 
@@ -165,7 +161,8 @@ label {
   display: none;
 }
 
-.ticket-form-group .ticket-form-file-upload {
+#ticket-form-file-upload,
+#preview-container {
   border: none;
   padding: 20px;
   color: #8784a4;
@@ -176,16 +173,27 @@ label {
   gap: 16px;
 }
 
-.ticket-form-group .ticket-form-file-upload img {
-  width: 32px;
-  height: 32px;
-  padding: 8px;
-  border-radius: 12px;
+#file-upload-tip {
+  margin: 0px;
+}
+
+#ticket-form input,
+#ticket-form-file-upload,
+#preview-container {
+  background-color: hsla(0, 0%, 100%, 0.08);
+}
+
+.ticket-form-group #ticket-form-file-upload img,
+#preview-image {
+  width: 46px;
+  height: 46px;
+  padding: 0px;
+  border-radius: 6px;
   border: 1px solid hsl(0, 0%, 70%, 0.25);
   background-color: hsla(0, 0%, 70%, 0.2);
 }
 
-.ticket-form-group .ticket-form-file-upload:hover {
+.ticket-form-group #ticket-form-file-upload:hover {
   cursor: copy;
 }
 
@@ -201,7 +209,7 @@ label {
 }
 
 #welcome-section h1 {
-  max-width: 840px;
+  max-width: 640px;
   margin: 0px;
 }
 
@@ -219,4 +227,25 @@ label {
 
 #secondary-welcome-message-email {
   color: var(--orange-700);
+}
+
+/* Preview Actions */
+.preview-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.preview-actions button {
+  font-size: 12px;
+  color: var(--neutral-300);
+  border: none;
+  border-radius: 2px;
+  padding: 6px;
+  background-color: hsla(0, 0%, 70%, 0.2);
+}
+
+#remove-image-btn {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 0.5px;
 }

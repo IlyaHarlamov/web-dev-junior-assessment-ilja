@@ -1,13 +1,18 @@
 <body>
   <div class="ticket-container">
     <img src="../assets/patterns/pattern-ticket.svg" alt="Ticket" class="ticket-svg"/>
-    <div class="logo">Coding Conf</div>
-    <div class="date-location">Jan 31, 2025 / Austin, TX</div>
+    <div class="ticket-main-info-container">
+      <img src="../assets/images/logo-full.svg" class="logo"></img>
+      <div class="date-location">Jan 31, 2025 / Austin, TX</div>
+    </div>
     <div class="avatar-section">
-      <img src="../assets/images/image-avatar.jpg" alt="Avatar" />
+      <img id="ticket-avatar" src="../assets/images/image-avatar.jpg" alt="Avatar" />
       <div class="name-info">
-        <div class="name">Jonatan Kristof</div>
-        <div class="email">@jonatankristof0101</div>
+        <div id="ticket-fullname"></div>
+        <div class="github-container">
+          <img class="github-logo" src="../assets/icons/icon-github.svg" alt="GitHub Icon">
+          <div id="ticket-github-username">@jonatankristof0101</div>
+        </div>
       </div>
     </div>
   </div>

@@ -4,8 +4,8 @@ body {
 
 .ticket-container {
   position: relative;
-  max-width: 580px;
-  margin: 48px auto;
+  max-width: 460px;
+  margin: 24px auto;
 }
 
 .ticket-svg {
@@ -14,50 +14,62 @@ body {
   display: block;
 }
 
-.logo {
+.ticket-main-info-container {
   position: absolute;
   top: 10%;
-  left: 8%;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {  
+  margin-bottom: 0.5rem;
 }
 
 .date-location {
-  position: absolute;
-  top: 25%;
-  left: 8%;
-  font-size: 0.9rem;
-  color: #ccc;
+  font-size: 0.8rem;
+  color: var(--neutral-500)
 }
 
 .avatar-section {
   position: absolute;
   bottom: 10%;
-  left: 8%;
+  left: 4%;
   display: flex;
   align-items: center;
 }
 
-.avatar-section img {
+.avatar-section #ticket-avatar {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
+  border-radius: 16%;
+  margin-right: 0.6rem;
 }
 
 .name-info {
   color: white;
 }
 
-.name-info .name {
+#ticket-fullname {
   font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 0.3rem;
 }
 
-.name-info .email {
+#ticket-github-username {
   font-size: 0.9rem;
   color: #ccc;
+}
+
+.github-container {
+  display: flex;
+  align-items: center;
+}
+
+.github-container .github-logo {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.3rem;
 }
 
 @media (max-width: 375px) {
@@ -78,11 +90,11 @@ body {
     height: 35px;
   }
 
-  .name-info .name {
+  #ticket-fullname {
     font-size: 0.9rem;
   }
 
-  .name-info .email {
+  #ticket-github-username {
     font-size: 0.7rem;
   }
 }
