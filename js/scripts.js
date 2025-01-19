@@ -24,14 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* Ticket Form */
 function isInputNotEmpty(value, elErrorId) {
   const elError = document.getElementById(elErrorId);
   if (!value.trim()) {
-    elError.style = "display: flex";
+    elError.classList.remove('hidden');
     elError.querySelector(".input-error-text").textContent = "This field is required."
     return false;
   } else {
-    elError.style = "display: none";
+    elError.classList.add('hidden');
     return true;
   }
 }
@@ -46,13 +47,20 @@ function isEmailValid(input, elErrorId) {
   }
   
   if (errorMessage) {
-    elError.style = "display: flex";
+    elError.classList.remove('hidden');
     elError.querySelector(".input-error-text").textContent = errorMessage;
   } else {
-    elError.style = "display: none";
+    elError.classList.add('hidden');
     return true;
   }
 }
+
+function enforceAtSymbol(input) {
+  if (!input.value.startsWith("@") & input.value != "") {
+    input.value = "@" + input.value;
+  }
+}
+/* Ticket Form */
  
 /* Welcome Section */
 function setMainWelcomeMessageInnerHtml(fullName) {
@@ -79,6 +87,7 @@ function getMainWelcomeMessage() {
 function getSecondaryWelcomeMessage() {
   return getWelcomeSection().querySelector("p");
 }
+/* Welcome Section */
 
 /* Ticket */
 function getTicketFormContainer() {
@@ -100,6 +109,7 @@ async function displayTicket(fullname, githubUsername, avatarURL) {
     elGithubUsername.textContent = githubUsername;
     elAvatar.src = avatarURL;
 }
+/* Ticket */
 
 /* File Upload */
 function getPreviewContainer() {
@@ -143,9 +153,4 @@ function removeImage() {
 function reuploadImage() {
   getAvatarInput().click();
 }
-
-function enforceAtSymbol(input) {
-  if (!input.value.startsWith("@") & input.value != "") {
-    input.value = "@" + input.value;
-  }
-}
+/* File Upload */
