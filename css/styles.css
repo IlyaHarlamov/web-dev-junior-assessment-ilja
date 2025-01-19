@@ -171,7 +171,6 @@ input::placeholder {
 }
 
 #ticket-form input:hover,
-#form-submit-button:hover,
 #ticket-form-file-upload:hover {
   background-color: hsla(0, 0%, 100%, 0.2);
 }
