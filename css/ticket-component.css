@@ -51,14 +51,14 @@ body {
 }
 
 #ticket-fullname {
+  color: var(--neutral-300);
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.3rem;
 }
 
 #ticket-github-username {
-  font-size: 0.9rem;
-  color: #ccc;
+  color: var(--neutral-300);
 }
 
 .github-container {
@@ -67,8 +67,8 @@ body {
 }
 
 .github-container .github-logo {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   margin-right: 0.3rem;
 }
 

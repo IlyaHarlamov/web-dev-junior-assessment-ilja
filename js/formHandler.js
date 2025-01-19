@@ -5,18 +5,55 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-
     const fullname = data['full-name'];
     const email = data['email'];
     const githubUsername = data['github-username'];
     const avatarURL = URL.createObjectURL(data['avatar']);
-    setMainWelcomeMessageInnerHtml(fullname);
-    setSecondaryWelcomeMessageInnerHTML(email);
-    hideTicketFormContainer();
-    await displayTicket(fullname, githubUsername, avatarURL);
+
+    const isFullnameValid = isInputNotEmpty(fullname, 'error-fullname');
+    const isEmailInputValid = isEmailValid(document.querySelector('.ticket-form-group input[name="email"]'), 'error-email');
+    const isGithubUsernameValid = isInputNotEmpty(githubUsername, 'error-github-username');
+    /* END Form Validation */
+
+    if (isFullnameValid & isEmailInputValid & isGithubUsernameValid) {
+      setMainWelcomeMessageInnerHtml(fullname);
+      setSecondaryWelcomeMessageInnerHTML(email);
+      hideTicketFormContainer();
+      await displayTicket(fullname, githubUsername, avatarURL);
+    }
   });
 });
 
+function isInputNotEmpty(value, elErrorId) {
+  const elError = document.getElementById(elErrorId);
+  if (!value.trim()) {
+    elError.style = "display: flex";
+    elError.querySelector(".input-error-text").textContent = "This field is required."
+    return false;
+  } else {
+    elError.style = "display: none";
+    return true;
+  }
+}
+
+function isEmailValid(input, elErrorId) {
+  const elError = document.getElementById(elErrorId);
+  let errorMessage;
+  if (!input.value.trim()) {
+    errorMessage = "The field is required."
+  } else if (!input.checkValidity()) {
+    errorMessage = "The email is invalid."
+  }
+  
+  if (errorMessage) {
+    elError.style = "display: flex";
+    elError.querySelector(".input-error-text").textContent = errorMessage;
+  } else {
+    elError.style = "display: none";
+    return true;
+  }
+}
+ 
 /* Welcome Section */
 function setMainWelcomeMessageInnerHtml(fullName) {
   getMainWelcomeMessage().innerHTML = `Congrats, <span id="welcome-message-fullname">${fullName}</span>!
@@ -86,8 +123,6 @@ function handleFileUpload(event) {
 
   if (file) {
     const reader = new FileReader();
-
-    // Once the file is read, display it
     reader.onload = function (e) {
       getPreviewImage().src = e.target.result;
       getUploadLabel().style.display = 'none';
@@ -99,14 +134,18 @@ function handleFileUpload(event) {
 }
 
 function removeImage() {
-  // Reset file input and hide preview
   getAvatarInput().value = '';
   getPreviewImage().src = '';
   getPreviewContainer().style.display = 'none';
-  getUploadLabel().style.display = 'flex'; // Show the upload label again
+  getUploadLabel().style.display = 'flex';
 }
 
 function reuploadImage() {
-  // Simulate a click on the file input
   getAvatarInput().click();
+}
+
+function enforceAtSymbol(input) {
+  if (!input.value.startsWith("@") & input.value != "") {
+    input.value = "@" + input.value;
+  }
 }

@@ -14,6 +14,7 @@
   --neutral-700: hsl(245, 19%, 35%);
   --neutral-900: hsl(248, 70%, 10%);
   --orange-500: hsl(7, 88%, 67%);
+  --orange-500-muted: hsl(7, 72%, 67%);
   --orange-700: hsl(7, 71%, 60%);
 }
 
@@ -102,7 +103,7 @@ label {
 
 /* Buttons */
 .btn-submit {
-  background-color: var(--orange-700);
+  background-color: var(--orange-500);
   color: var(--neutral-900);
   font-weight: var(--font-weight-extrabold);
   font-size: 18px;
@@ -112,25 +113,52 @@ label {
   cursor: pointer;
 }
 
+.btn-submit:hover {
+  box-shadow: 1px 3px var(--orange-500-muted);
+  opacity: 0.9;
+}
+
 /* Forms - Ticket Form */
 #ticket-form-container {
   margin-left: auto;
   margin-right: auto;
   padding: 0px 20px 20px 20px;
-  max-width: 420px;
+  max-width: 480px;
 }
 
 .ticket-form-group {
   margin-bottom: 32px;
 }
 
-#upload-label,
-#upload-label span,
-#ticket-form label {
+.form-label {
   display: block;
-  margin-bottom: 16px;
-  color: var(--neutral-300)
+  color: var(--neutral-300);
+  margin-bottom: 0.8rem;
 }
+
+/* START Input Info */
+.input-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.input-info-icon {
+  width: 1.2rem;
+}
+
+.input-info-text  {
+  font-size: 0.9rem;
+  color: var(--neutral-500)
+}
+
+.input-error-text  {
+  font-size: 0.9rem;
+  color: var(--orange-700);
+}
+/* END Input Info */
 
 .ticket-form-group input,
 #form-submit-button {
@@ -161,6 +189,10 @@ label {
   display: none;
 }
 
+.input-error-message {
+  color: var(--orange-700);
+}
+
 #ticket-form-file-upload,
 #preview-container {
   border: none;
@@ -183,10 +215,22 @@ label {
   background-color: hsla(0, 0%, 100%, 0.08);
 }
 
-.ticket-form-group #ticket-form-file-upload img,
+#ticket-form input:hover,
+#ticket-form-file-upload:hover {
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+#ticket-form input:focus,
+#ticket-form-file-upload:focus {
+  outline: 2px solid var(--neutral-500);
+  outline-offset: 0.2rem;
+}
+
+
+#ticket-form-file-upload img,
 #preview-image {
-  width: 46px;
-  height: 46px;
+  width: 64px;
+  height: 64px;
   padding: 0px;
   border-radius: 6px;
   border: 1px solid hsl(0, 0%, 70%, 0.25);
@@ -236,12 +280,17 @@ label {
 }
 
 .preview-actions button {
-  font-size: 12px;
-  color: var(--neutral-300);
+  font-size: 14px;
   border: none;
   border-radius: 2px;
   padding: 6px;
-  background-color: hsla(0, 0%, 70%, 0.2);
+  background-color: hsla(0, 0%, 100%, 0.08);
+  cursor: pointer;
+  color: hsl(0, 0%, 70%);
+}
+
+.preview-actions button:hover {
+  color: var(--neutral-300);
 }
 
 #remove-image-btn {
