@@ -2,10 +2,16 @@ body {
   background-color: #1b1b2f;
 }
 
+#ticket-section {
+  display: flex;
+  justify-content: center;
+}
+
 .ticket-container {
   position: relative;
   max-width: 460px;
-  margin: 24px auto;
+  margin: 0px 8px;
+
 }
 
 .ticket-svg {
@@ -46,19 +52,17 @@ body {
   margin-right: 0.6rem;
 }
 
-.name-info {
-  color: white;
-}
-
 #ticket-fullname {
   color: var(--neutral-300);
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: var(--font-weight-regular);
   margin-bottom: 0.3rem;
 }
 
 #ticket-github-username {
-  color: var(--neutral-300);
+  color: var(--neutral-500);
+  font-weight: var(--font-weight-regular);
+  font-size: 1rem;
 }
 
 .github-container {
@@ -70,31 +74,4 @@ body {
   width: 20px;
   height: 20px;
   margin-right: 0.3rem;
-}
-
-@media (max-width: 375px) {
-  .ticket-container {
-    max-width: 300px;
-  }
-
-  .logo {
-    font-size: 1rem;
-  }
-
-  .date-location {
-    font-size: 0.7rem;
-  }
-
-  .avatar-section img {
-    width: 35px;
-    height: 35px;
-  }
-
-  #ticket-fullname {
-    font-size: 0.9rem;
-  }
-
-  #ticket-github-username {
-    font-size: 0.7rem;
-  }
 }

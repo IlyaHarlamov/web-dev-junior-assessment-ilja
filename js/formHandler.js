@@ -92,7 +92,7 @@ function hideTicketFormContainer() {
 async function displayTicket(fullname, githubUsername, avatarURL) {
     const response = await fetch("html/ticket-component.html");
     const html = await response.text();
-    document.getElementById('ticket-placeholder').innerHTML = html;
+    document.getElementById('ticket-section').innerHTML = html;
     const elFullname = document.getElementById('ticket-fullname');
     const elGithubUsername = document.getElementById('ticket-github-username');
     const elAvatar = document.getElementById('ticket-avatar');
@@ -114,7 +114,7 @@ function getPreviewImage() {
   return document.getElementById('preview-image');
 }
 
-function getUploadLabel() {
+function getTicketFormFileUpload() {
   return document.getElementById('ticket-form-file-upload');
 }
 
@@ -125,7 +125,7 @@ function handleFileUpload(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
       getPreviewImage().src = e.target.result;
-      getUploadLabel().style.display = 'none';
+      getTicketFormFileUpload().style.display = 'none';
       getPreviewContainer().style.display = 'flex';
     };
 
@@ -137,7 +137,7 @@ function removeImage() {
   getAvatarInput().value = '';
   getPreviewImage().src = '';
   getPreviewContainer().style.display = 'none';
-  getUploadLabel().style.display = 'flex';
+  getTicketFormFileUpload().style.display = 'flex';
 }
 
 function reuploadImage() {
